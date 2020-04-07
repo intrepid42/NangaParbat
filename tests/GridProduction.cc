@@ -8,6 +8,8 @@
 #include "NangaParbat/nonpertfunctions.h"
 
 #include <LHAPDF/LHAPDF.h>
+#include <stdio.h>
+#include <string.h>
 
 //_________________________________________________________________________________
 int main(int argc, char* argv[])

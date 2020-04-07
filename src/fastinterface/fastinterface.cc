@@ -43,7 +43,7 @@ namespace NangaParbat
     std::vector<apfel::SubGrid> vsgpdf;
     for (auto const& sg : _config["xgridpdf"])
       vsgpdf.push_back({sg[0].as<int>(), sg[1].as<double>(), sg[2].as<int>()});
-    _gpdf = std::unique_ptr<const apfel::Grid>(new apfel::Grid({vsgpdf}));
+    _gpdf = std::unique_ptr<const apfel::Grid>(new apfel::Grid({vsgpdf}, true));
 
     // Construct set of distributions as a function of the scale to be
     // tabulated for PDFs
@@ -60,7 +60,7 @@ namespace NangaParbat
     std::vector<apfel::SubGrid> vsgff;
     for (auto const& sg : _config["xgridff"])
       vsgff.push_back({sg[0].as<int>(), sg[1].as<double>(), sg[2].as<int>()});
-    _gff = std::unique_ptr<const apfel::Grid>(new apfel::Grid({vsgff}));
+    _gff = std::unique_ptr<const apfel::Grid>(new apfel::Grid({vsgff}, true));
 
     // Construct set of distributions as a function of the scale to be
     // tabulated for FFs

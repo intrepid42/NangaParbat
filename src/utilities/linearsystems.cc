@@ -20,7 +20,7 @@ namespace NangaParbat
 
     gsl_matrix_view covmat = gsl_matrix_view_array(mat, ndata, ndata);
 
-    gsl_linalg_cholesky_decomp1(&covmat.matrix);
+    gsl_linalg_cholesky_decomp(&covmat.matrix);
 
     apfel::matrix<double> L{(size_t) ndata, (size_t) ndata};
     for(int i = 0; i < ndata; i++)
